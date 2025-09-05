@@ -31,4 +31,23 @@ function createSlug(string) {
 
 test("La funzione createSlug restituisce una stringa in lowercase.", () => {
     expect(createSlug("STRINGA")).toBe("stringa")
-}) 
+})
+
+/*
+🏆 Snack 3
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione average calcola la media aritmetica di un array di numeri."
+*/
+
+function average([arr]) {
+    const sum = arr.reduce((acc, number) => acc + number, 0)
+    const average = sum / arr.length
+    return average
+}
+
+
+test("La funzione average calcola la media aritmetica di un array di numeri.", () => {
+    expect(average([4, 6, 9, 10, 14])).toBe(8.6)
+})
+
