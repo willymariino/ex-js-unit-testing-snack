@@ -40,7 +40,7 @@ Creare un test che verifichi la seguente descrizione:
 👉 "La funzione average calcola la media aritmetica di un array di numeri."
 */
 
-function average([arr]) {
+function average(arr) {
     const sum = arr.reduce((acc, number) => acc + number, 0)
     const average = sum / arr.length
     return average
