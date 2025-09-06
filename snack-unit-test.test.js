@@ -26,6 +26,11 @@ Creare un test che verifichi la seguente descrizione:
 */
 
 function createSlug(string) {
+
+    if (!string.trim()) {
+        throw new Error("titolo non valido")
+    }
+
     return string
         .toLowerCase()
         .split(" ")
@@ -95,3 +100,17 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
     expect(isPalindrome("otto")).toBe("otto")
     expect(isPalindrome("hamburger")).toBe("non è palindroma")
 })
+
+/*
+🏆 Snack 6
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione createSlug lancia un errore se il titolo è vuoto o non valido."
+*/
+
+test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
+
+    const error = () => createSlug("")
+    expect(error).toThrow()
+})
+
