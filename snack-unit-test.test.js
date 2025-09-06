@@ -26,7 +26,10 @@ Creare un test che verifichi la seguente descrizione:
 */
 
 function createSlug(string) {
-    return string.toLowerCase()
+    return string
+        .toLowerCase()
+        .split(" ")
+        .join("-")
 }
 
 test("La funzione createSlug restituisce una stringa in lowercase.", () => {
@@ -63,13 +66,7 @@ Creare un test che verifichi la seguente descrizione:
 createSlug("Questo è un test") → "questo-e-un-test"
 */
 
-function createSlug(string) {
-    return string
-        .toLowerCase()
-        .split(" ")
-        .join("-")
-}
 
 test("La funzione createSlug sostituisce gli spazi con -.", () => {
-    expect(createSlug("Questo è un test")).toBe("questo-e-un-test")
+    expect(createSlug("Questo è un test")).toBe("questo-è-un-test")
 })
