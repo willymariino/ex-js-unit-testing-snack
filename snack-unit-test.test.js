@@ -70,3 +70,27 @@ createSlug("Questo è un test") → "questo-e-un-test"
 test("La funzione createSlug sostituisce gli spazi con -.", () => {
     expect(createSlug("Questo è un test")).toBe("questo-è-un-test")
 })
+
+/*
+🏆 Snack 5
+Creare un test che verifichi la seguente descrizione:
+
+👉 "La funzione isPalindrome verifica se una stringa è un palindromo."
+
+📌 Nota: una stringa palindroma è una sequenza di caratteri che si legge uguale sia da sinistra a destra che da destra a sinistra.
+*/
+
+function isPalindrome(string) {
+    const reversed = string.split("")
+
+    if (reversed.reverse() === reversed) {
+        return string
+    }
+    else {
+        return "non è palindroma"
+    }
+}
+
+test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
+    expect(isPalindrome("otto")).toBe("otto")
+})
