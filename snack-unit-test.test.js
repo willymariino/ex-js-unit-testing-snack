@@ -139,4 +139,5 @@ test("La funzione findPostById restituisce il post corretto dato l’array di po
     ]
 
     expect(findPostById(posts, 1)).toBe(posts[0])
+    expect(findPostById(posts, 1)).toEqual({ id: 1, name: "post 1", slug: "slug 1" },)
 })
