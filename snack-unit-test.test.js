@@ -114,3 +114,29 @@ test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido
     expect(error).toThrow()
 })
 
+/*
+🏆 Snack 7
+Crea un array di oggetti posts, in cui ogni oggetto ha le proprietà id, title e slug.
+
+Creare un test che verifichi le seguenti descrizioni:
+
+👉 "La funzione findPostById restituisce il post corretto dato l’array di post e l’id"
+
+
+Creare uno o più test aggiuntivi che controllino che la struttura dati passati sia conforme (ogni post ha le proprietà id, title e slug, viene passato un id numerico).
+*/
+
+function findPostById(posts, id) {
+    return posts.find(p => p.id === id)
+}
+
+test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id", () => {
+
+    const posts = [
+        { id: 1, name: "post 1", slug: "slug 1" },
+        { id: 2, name: "post 2", slug: "slug 2" },
+        { id: 3, name: "post 3", slug: "slug 3" }
+    ]
+
+    expect(findPostById(posts, 1)).toBe(posts[0])
+})
