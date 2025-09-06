@@ -81,9 +81,9 @@ Creare un test che verifichi la seguente descrizione:
 */
 
 function isPalindrome(string) {
-    const reversed = string.split("")
+    const reversed = string.split("").reverse().join("")
 
-    if (reversed.reverse() === reversed) {
+    if (string === reversed) {
         return string
     }
     else {
@@ -93,4 +93,5 @@ function isPalindrome(string) {
 
 test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
     expect(isPalindrome("otto")).toBe("otto")
+    expect(isPalindrome("hamburger")).toBe("non è palindroma")
 })
